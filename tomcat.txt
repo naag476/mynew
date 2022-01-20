@@ -1,0 +1,25 @@
+https:archive.apache.org/dist/tomcat/tomcat-9/y9.0.39.tar.gz
+
+
+
+F
+apache-tomcat-9.0.39-windows-x64.zip.asc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+export JAVA_HOME=/opt/jdk1.8.0.311
+export JRE_HOME=/opt/jdk1.8.0.311/jre
+export PATH=$PATH:/jdk1.8.0.311/bin:/opt/jdk1.8.0.311/jre/bin

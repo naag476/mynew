@@ -1,0 +1,38 @@
+	sudo su -
+	cd
+	cd /opt/
+	wget https://dlcdn.apache.org/maven/maven-3/3.8.4/binaries/apache-maven-3.8.4-bin.tar.gz
+	ls
+	tar -xvf apache-maven-3.8.4-bin.tar.gz
+	ls
+	rm -rf apache-maven-3.8.4-bin.tar.gz
+	ls
+	vi /etc/profile.d/maven.sh
+	-
+	-
+	-
+	-
+	-
+	-i
+	
+	
+	export M2_HOME=/opt/apache-maven-3.8.4
+	export PATH=${M2_HOME}/bin:${PATH}
+	
+	
+	
+	
+	:wq!
+	vi /etc/ profile.d/maven.sh
+
+	source /etc/ profile.d/maven.sh
+	mvn -v
+
+	yum install git -y
+	git --version
+	top
+        www   public ip:8080
+	
+	after maven installaltion-- jenkins password-- sudo cat (var file)
+
+	

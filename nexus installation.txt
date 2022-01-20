@@ -1,0 +1,33 @@
+cd /opt/
+wget java link
+tar -xvf java link
+
+sudo vi /etc/profile.d/java.sh
+export JAVA_HOME=/opt/jdk1.8.0_192
+export JRE_HOME=/opt/jdk1.8.0_192/jre
+export PATH=$PATH:/opt/jdk1.8.0_192/bin:/opt/jdk1.8.0_192/jre/bin
+:wq!
+sudo source /etc/profile.d/java.sh
+java --version
+
+
+nexus installation
+sudo su -
+useradd nexus
+need to add nexus user in visudo file
+cd /opt/
+
+wget http://download.sonatype.com/nexus/oss/nexus-2.11.2-06-bundle.tar.gz
+sudo tar -xvf nexus-2.11.2-06-bundle.tar.gz
+vi /etc/init.d/nexus
+ NEXUS_HOME=/opt/nexus-2.11.2-06
+   RUN_AS_USER=nexus
+   :wq!
+chown -R nexus:nexus nexus-2.11.2-06
+chown -R nexus:nexus Sonatype-work
+sudo su nexus
+cd
+service nexus start
+service nexus status
+netstat -tnlp
+public ip:8081/nexus
