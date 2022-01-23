@@ -40,3 +40,31 @@ resource "aws_route_table_association" "rt-as" {
 subnet_id = aws_subnet.pub-sub.id
 route_table_id = aws_route_table.pb-rt.id
 }
+
+
+resource "aws_instance" "web" {
+    ami         = "ami-08e4e35cccc6189f4"
+instance_type   = "t2.micro"
+key_name        = aws_key_pair.key.id
+subnet_id = aws_subnet.pub-sub.id
+security_groups = [aws_security_group.sec-grp.id]
+    tags        = {
+       Name     = "my-ec2"
+        }
+  }
+resource "aws_key_pair" "key"  {
+   key_name = "devops"
+public_key  = file("devops.pub")
+    }
+resource "aws_security_group" "sec-grp" {
+   vpc_id = aws_vpc.my-vpc.id
+ingress {
+   from_port = 22
+     to_port = 22
+  protocol   = "tcp"
+ cidr_blocks = ["0.0.0.0/0"]
+    }
+tags = {
+Name = "meehan"
+    }
+   }
